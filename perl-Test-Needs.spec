@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Needs
 Version  : 0.002005
-Release  : 9
+Release  : 10
 URL      : http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/Test-Needs-0.002005.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/Test-Needs-0.002005.tar.gz
 Summary  : 'Skip tests when modules not available'
@@ -42,6 +42,13 @@ else
 %{__perl} Build.PL
 ./Build
 fi
+
+%check
+export LANG=C
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
