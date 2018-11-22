@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Needs
 Version  : 0.002005
-Release  : 13
+Release  : 14
 URL      : http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/Test-Needs-0.002005.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/Test-Needs-0.002005.tar.gz
 Summary  : 'Skip tests when modules not available'
@@ -65,7 +65,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/Test/Needs.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Test/Needs.pm
 
 %files dev
 %defattr(-,root,root,-)
