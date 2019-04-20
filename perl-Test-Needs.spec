@@ -4,10 +4,10 @@
 #
 Name     : perl-Test-Needs
 Version  : 0.002006
-Release  : 22
+Release  : 23
 URL      : https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002006.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002006.tar.gz
-Summary  : 'Skip tests when modules not available'
+Summary  : Skip tests when modules not available
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Test-Needs-license = %{version}-%{release}
@@ -24,6 +24,7 @@ use Test::Needs 'Some::Module';
 Summary: dev components for the perl-Test-Needs package.
 Group: Development
 Provides: perl-Test-Needs-devel = %{version}-%{release}
+Requires: perl-Test-Needs = %{version}-%{release}
 
 %description dev
 dev components for the perl-Test-Needs package.
