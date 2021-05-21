@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Needs
 Version  : 0.002006
-Release  : 32
+Release  : 33
 URL      : https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002006.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002006.tar.gz
 Summary  : 'Skip tests when modules not available'
