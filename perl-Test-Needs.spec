@@ -4,12 +4,13 @@
 #
 Name     : perl-Test-Needs
 Version  : 0.002009
-Release  : 39
+Release  : 40
 URL      : https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002009.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002009.tar.gz
 Summary  : 'Skip tests when modules not available'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0-Perl GPL-1.0
+Requires: perl-Test-Needs-license = %{version}-%{release}
 Requires: perl-Test-Needs-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
@@ -28,6 +29,14 @@ Requires: perl-Test-Needs = %{version}-%{release}
 
 %description dev
 dev components for the perl-Test-Needs package.
+
+
+%package license
+Summary: license components for the perl-Test-Needs package.
+Group: Default
+
+%description license
+license components for the perl-Test-Needs package.
 
 
 %package perl
@@ -65,6 +74,8 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Test-Needs
+cp %{_builddir}/Test-Needs-0.002009/LICENSE %{buildroot}/usr/share/package-licenses/perl-Test-Needs/0eafb239a1c3347382a42ad5bacb2e17c5dadfe5
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -82,6 +93,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %defattr(-,root,root,-)
 /usr/share/man/man3/Test::Needs.3
 
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Test-Needs/0eafb239a1c3347382a42ad5bacb2e17c5dadfe5
+
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Test/Needs.pm
+/usr/lib/perl5/*
